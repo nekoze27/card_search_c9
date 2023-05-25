@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CardSearchController;
+use App\Http\Controllers\CardContentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +31,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/card_search', [CardSearchController::class, 'card_search'])->name('card_search');
+
+Route::get('card_contents/create', [CardContentsController::class, 'create']);
 
 require __DIR__.'/auth.php';
