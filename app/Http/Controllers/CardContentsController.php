@@ -38,4 +38,9 @@ class CardContentsController extends Controller
         $request->session()->flash('message', '保存しました');
         return back();
     }
+
+    public function index() {
+        $card_contents=CardContents::all();
+        return view('card_contents.index', compact('card_contents'));
+    }
 }

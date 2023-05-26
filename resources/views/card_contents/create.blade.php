@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="front-semibold text-xl text-gray-800 leading-tight">
-      ポケカ
+      カード新規登録
     </h2>
   </x-slot>
 

@@ -34,5 +34,6 @@ Route::get('/card_search', [CardSearchController::class, 'card_search'])->name('
 
 Route::get('card_contents/create', [CardContentsController::class, 'create']);
 Route::post('card_contents', [CardContentsController::class, 'store'])->name('card_contents.store');
+Route::get('card_contents', [CardContentsController::class, 'index']);
 
 require __DIR__.'/auth.php';
