@@ -14,7 +14,7 @@ class CardContentsController extends Controller
 
     public function store(Request $request) {
         $validated = $request->validate([
-            'card_no' => 'required|max:20',
+            'card_no' => 'unique:card_contents,card_no|required|max:20',
             'name' => 'required|max:20',
             'category' => 'required|max:20',
             'hp' => 'integer|max:500',
