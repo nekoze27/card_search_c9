@@ -33,5 +33,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/card_search', [CardSearchController::class, 'card_search'])->name('card_search');
 
 Route::get('card_contents/create', [CardContentsController::class, 'create']);
+Route::post('card_contents', [CardContentsController::class, 'store'])->name('card_contents.store');
 
 require __DIR__.'/auth.php';

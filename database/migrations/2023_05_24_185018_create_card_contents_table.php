@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('card_contents', function (Blueprint $table) {
             $table->id();
+            $table->string('card_no');
             $table->string('name');
             $table->string('category');
-            $table->integer('HP')->nullable();
+            $table->integer('hp')->nullable();
             $table->string('weakness')->nullable();
             $table->string('resistance')->nullable();
             $table->integer('escape_energy')->nullable();
