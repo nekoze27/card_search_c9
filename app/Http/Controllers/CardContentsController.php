@@ -17,24 +17,19 @@ class CardContentsController extends Controller
             'card_no' => 'unique:card_contents,card_no|required|max:20',
             'name' => 'required|max:20',
             'category' => 'required|max:20',
-            'hp' => 'integer|max:500',
+            'hp' => 'nullable|integer|max:500',
             'weakness' => 'max:20',
             'resistance' => 'max:20',
-            'escape_energy' => 'integer|max:20',
-            'effect' => 'max:20',
+            'escape_energy' => 'nullable|integer|max:10',
+            'effect' => 'max:200',
         ]);
+
+        $validated['user_id'] = auth()->id();
+
+
         $card_contents = CardContents::create($validated);
 
-        $card_contents = CardContents::create([
-            'card_no' => $request->card_no,
-            'name' => $request->name,
-            'category' => $request->category,
-            'hp' => $request->hp,
-            'weakness' => $request->weakness,
-            'resistance' => $request->resistance,
-            'escape_energy' => $request->escape_energy,
-            'effect' => $request->effect,
-        ]);
+       
         $request->session()->flash('message', '保存しました');
         return back();
     }

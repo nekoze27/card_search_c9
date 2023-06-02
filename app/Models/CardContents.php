@@ -18,5 +18,10 @@ class CardContents extends Model
         'resistance',
         'escape_energy',
         'effect',
+        'user_id'
     ];
+
+    public function usr() {
+        return $this->belongsTo(User::class);
+    }
 }

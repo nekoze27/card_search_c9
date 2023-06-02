@@ -17,7 +17,7 @@ use App\Http\Controllers\CardContentsController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/card_search/search');
 });
 
 Route::get('/dashboard', function () {
@@ -35,5 +35,7 @@ Route::get('/card_search', [CardSearchController::class, 'card_search'])->name('
 Route::get('card_contents/create', [CardContentsController::class, 'create']);
 Route::post('card_contents', [CardContentsController::class, 'store'])->name('card_contents.store');
 Route::get('card_contents', [CardContentsController::class, 'index']);
+
+Route::get('card_search', [CardSearchController::class, 'card_search'])->name('card_search');
 
 require __DIR__.'/auth.php';

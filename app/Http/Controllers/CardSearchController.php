@@ -4,12 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\CardContents;
 
 class CardSearchController extends Controller
 {
-    //
-    public function card_search() {
-        $users = User::all();
-        return view('card_search', ['users'=> $users]);
+
+    public function card_search(Request $request) 
+    {
+        $name = $request->input('name');
+        $category = $request->input('category');
+
+        $query = CardContents::query();
+
+        if ($name) {
+            $query->where('name', 'LIKE', "%{$name}%");
+        }
+
+        if ($category) {
+            $query->where('category', $category);
+        }
+
+        $card_contents = $query->get();
+
+     
+
+        return view('card_contents.index', compact('card_contents'));
     }
 }

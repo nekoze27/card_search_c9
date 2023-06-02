@@ -5,6 +5,14 @@
     </h2>
   </x-slot>
 
+  <form action="{{ route('card_search') }}" method="GET">
+    @csrf
+    <input type="text" name="name" placeholder="カード名">
+    <input type="text" name="category" placeholder="カテゴリー">
+    <x-primary-button>
+      検索
+    </x-primary-button>
+
   <div class="mx-auto px-6">
     <table class="table-auto border-spacing-1">
       <thead>
