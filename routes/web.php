@@ -38,4 +38,6 @@ Route::get('card_contents', [CardContentsController::class, 'index']);
 
 Route::get('card_search', [CardSearchController::class, 'card_search'])->name('card_search');
 
+Route::get('card_contents/create', [CardContentsController::class, 'create'])->middleware(['auth','admin']);
+
 require __DIR__.'/auth.php';
