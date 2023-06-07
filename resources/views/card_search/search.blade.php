@@ -10,6 +10,5 @@
       <input type="text" name="category" placeholder="カテゴリー">
       <x-primary-button>
         検索
-      </x-primary-button>
     </form>
 </x-app-layout>

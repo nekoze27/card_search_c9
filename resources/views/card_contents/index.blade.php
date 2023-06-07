@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="front-semibold text-xl text-gray-800 leading-tight">
-      カード一覧表示
+      カード一覧
     </h2>
   </x-slot>
 

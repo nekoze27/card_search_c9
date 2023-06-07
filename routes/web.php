@@ -18,7 +18,7 @@ use App\Http\Controllers\CardContentsController;
 
 Route::get('/', function () {
     return view('/card_search/search');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -32,12 +32,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/card_search', [CardSearchController::class, 'card_search'])->name('card_search');
 
-Route::get('card_contents/create', [CardContentsController::class, 'create']);
 Route::post('card_contents', [CardContentsController::class, 'store'])->name('card_contents.store');
 Route::get('card_contents', [CardContentsController::class, 'index']);
 
-Route::get('card_search', [CardSearchController::class, 'card_search'])->name('card_search');
-
-Route::get('card_contents/create', [CardContentsController::class, 'create'])->middleware(['auth','admin']);
+Route::get('card_contents/create', [CardContentsController::class, 'create'])->middleware(['auth','admin'])->name('create');
 
 require __DIR__.'/auth.php';
