@@ -9,6 +9,8 @@ class CardContents extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'card_contents_id';
+
     protected $fillable = [
         'card_no',
         'name',

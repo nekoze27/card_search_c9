@@ -37,4 +37,6 @@ Route::get('card_contents', [CardContentsController::class, 'index']);
 
 Route::get('card_contents/create', [CardContentsController::class, 'create'])->middleware(['auth','admin'])->name('create');
 
+Route::get('card_contents/show/{card_contents_id}', [CardContentsController::class, 'show'])->name('card_contents.show');
+
 require __DIR__.'/auth.php';

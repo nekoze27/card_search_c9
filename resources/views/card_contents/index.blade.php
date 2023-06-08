@@ -42,7 +42,11 @@
           @foreach($card_contents as $card_content)
           <tr>
             <td class="py-2 px-4 border-b text-center">{{$card_content->card_no}}</td>
-            <td class="py-2 px-4 border-b text-center">{{$card_content->name}}</td>
+            <td class="py-2 px-4 border-b text-center">
+              <a href="{{ route('card_contents.show', ['card_contents_id' => $card_content->card_contents_id]) }}" class="text-blue-600">
+                {{$card_content->name}}
+              </a>
+            </td>
             <td class="py-2 px-4 border-b text-center">{{$card_content->category}}</td>
             <td class="py-2 px-4 border-b text-center">{{$card_content->hp}}</td>
             <td class="py-2 px-4 border-b text-center">{{$card_content->weakness}}</td>

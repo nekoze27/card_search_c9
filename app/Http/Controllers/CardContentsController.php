@@ -38,4 +38,9 @@ class CardContentsController extends Controller
         $card_contents=CardContents::all();
         return view('card_contents.index', compact('card_contents'));
     }
+
+    public function show($card_contents_id) {
+        $card_content = CardContents::where('card_contents_id', $card_contents_id)->first();
+        return view('card_contents.show', compact('card_content'));
+    }
 }
