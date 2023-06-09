@@ -103,5 +103,15 @@
         </div>
       </div>
 
+      @if (Auth::check() && auth()->user()->role == 'admin') 
+        <div class="mt-4 text-right">
+          <a href="{{route('card_contents.edit', $card_content)}}">
+            <x-primary-button>
+              編集
+            </x-primary-button>
+          </a>
+        </div>
+      @endif
+
   </div>
 </x-app-layout>

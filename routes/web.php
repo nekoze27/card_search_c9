@@ -39,4 +39,8 @@ Route::get('card_contents/create', [CardContentsController::class, 'create'])->m
 
 Route::get('card_contents/show/{card_contents_id}', [CardContentsController::class, 'show'])->name('card_contents.show');
 
+Route::get('card_contens/{card_content}/edit', [CardContentsController::class, 'edit'])->name('card_contents.edit');
+
+Route::patch('card_contents/{card_content}', [CardContentsController::class, 'update'])->name('card_contents.update');
+
 require __DIR__.'/auth.php';
