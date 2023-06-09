@@ -104,12 +104,20 @@
       </div>
 
       @if (Auth::check() && auth()->user()->role == 'admin') 
-        <div class="mt-4 text-right">
-          <a href="{{route('card_contents.edit', $card_content)}}">
+        <div class="mt-4 text-right flex">
+          <a href="{{route('card_contents.edit', $card_content)}}" class="flex-1">
             <x-primary-button>
               編集
             </x-primary-button>
           </a>
+
+          <form method="post" action="{{route('card_contents.destroy', $card_content)}}" class="flex-2">
+            @csrf
+            @method('delete')
+            <x-primary-button class="bg-red-700 ml-2">
+              削除
+            </x-primary-button>
+          </form>
         </div>
       @endif
 

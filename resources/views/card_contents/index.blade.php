@@ -39,6 +39,11 @@
           </tr>
         </thead>
         <tbody>
+          @if(session('message'))
+            <div class="text-red-600 font-bold">
+              {{session('message')}}
+            </div>
+          @endif
           @foreach($card_contents as $card_content)
           <tr>
             <td class="py-2 px-4 border-b text-center">{{$card_content->card_no}}</td>

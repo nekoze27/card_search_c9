@@ -67,4 +67,10 @@ class CardContentsController extends Controller
         $request->session()->flash('message', '更新しました');
         return back();
     }
+
+    public function destroy(Request $request, CardContents $card_content) {
+        $card_content->delete();
+        $request->session()->flash('message', '削除しました');
+        return redirect()->route('card_contents.index');
+    }
 }

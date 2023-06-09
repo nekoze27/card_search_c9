@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/card_search', [CardSearchController::class, 'card_search'])->name('card_search');
 
 Route::post('card_contents', [CardContentsController::class, 'store'])->name('card_contents.store');
-Route::get('card_contents', [CardContentsController::class, 'index']);
+Route::get('card_contents', [CardContentsController::class, 'index'])->name('card_contents.index');
 
 Route::get('card_contents/create', [CardContentsController::class, 'create'])->middleware(['auth','admin'])->name('create');
 
@@ -42,5 +42,7 @@ Route::get('card_contents/show/{card_contents_id}', [CardContentsController::cla
 Route::get('card_contens/{card_content}/edit', [CardContentsController::class, 'edit'])->name('card_contents.edit');
 
 Route::patch('card_contents/{card_content}', [CardContentsController::class, 'update'])->name('card_contents.update');
+
+Route::delete('card_contents/{card_content}', [CardContentsController::class, 'destroy'])->name('card_contents.destroy');
 
 require __DIR__.'/auth.php';
