@@ -35,7 +35,8 @@ class CardContentsController extends Controller
     }
 
     public function index() {
-        $card_contents=CardContents::all();
+        $cared_contents = CardContents::all();
+        $card_contents = orderBy('card_no')->paginate(10);
         return view('card_contents.index', compact('card_contents'));
     }
 

@@ -62,6 +62,9 @@
           @endforeach
         </tbody>
       </table>
+      <div class="mb-4 px-4">
+        {{ $card_contents->links() }}
+      </div>
     </div>
 </div>
 

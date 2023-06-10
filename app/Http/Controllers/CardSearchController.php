@@ -24,7 +24,7 @@ class CardSearchController extends Controller
             $query->where('category', $category);
         }
 
-        $card_contents = $query->get();
+        $card_contents = $query->orderByDesc('card_no')->paginate(10);
 
      
 
